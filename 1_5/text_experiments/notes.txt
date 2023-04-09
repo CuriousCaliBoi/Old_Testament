@@ -1,0 +1,3 @@
+Ok so I used >> to write whatever i want in a txt file I create. And then I created a copy by using
+the > operator and redirected the output of a text into a file that I created in that command
+I'm going to write my own shell so might as well know what the hell im doing.
