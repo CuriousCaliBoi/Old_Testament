@@ -9,12 +9,12 @@ int main()
     float fahr;
     float celc;
 
-    int lower;
+    int lower = 0;
     int upper;
     int step;
 
     //  assign values to variables
-    lower = 0;
+ 
     upper = 300;
     step = 20;
 

@@ -5,6 +5,7 @@ int main(){
     // int cuz im big brained mofo
     while((c = getchar())!= EOF){
         putchar(c);
+        putchar(c);
     }
     
     return 0;

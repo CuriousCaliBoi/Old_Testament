@@ -3,18 +3,21 @@
 
 int main(){
     int c;
-    int next;
+    int prev;
     c = getchar();
     while((c != EOF)){
-        next = getchar();
-        if ((c == " ") && (next == " ")){
+        prev = c;
+        c = getchar();
+        if ((c == ' ') && (prev == ' ')){
             ;
         } else {
-            putchar(c);
+            putchar(prev);
         }
 
 
+// right now its just apmming the first letter
     }
+    printf("%d is the value of EOF",EOF);
     return 0;
 
 }
