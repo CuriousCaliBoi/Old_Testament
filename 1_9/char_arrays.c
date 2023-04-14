@@ -14,24 +14,23 @@
 #include <stdio.h>
 #define MAXLINE 1000
 int main(){
-    int c,max,count;
+    int len, max;
     max = 0;
-    count = 0;
-    while((c = getchar())!= EOF){
-        if (c == '\n'){
-            if(count > max){
-                max = count;
-                printf("The new longest line has %d characters", max);
-
-            }
-            count = 0;
-
-        } else{
-            count ++;
+    char line[MAXLINE];
+    char longest[MAXLINE];
+    // this confirms the earlier observation about walrus operator into boolean
+    while((len = getline(line, MAXLINE) > 0)){
+        if (len > max){
+            max = len;
+            copy(line, longest);
         }
 
     }
-    return 0;
+    if (max > 0){
+        printf("%s",longest);
+        return 0;
+    }
+    return 1;
 
 }
 int getline(char s[], int lim){
@@ -45,10 +44,25 @@ int getline(char s[], int lim){
         // fill out our line array with the current line with whatever bounds
         // adhering to the maxlimit, end of file (last line)(our earlier eof chek will be
         // while len> 0 and we don't want to include the new line character)
+        // if 0 based array shouldnt it be lim-1 if we need '\o'
+
         s[i] = c;
-        return i;
 
     }
+    i++;
+    // need null terminator always for C
+    s[i] = '\0';
+    return i;
     
 
+}
+
+void copy(char to[], char from[]){
+    int i =0;
+    // weird way to run through a string coming from python
+    while((to[i] = from[i]) != '\0'){
+        i++;
+    }
+    // why doesnt book put null terminator ?
+    // would the last to[i] = from[i] even if the whole expression is false p awesome
 }
