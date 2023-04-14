@@ -14,6 +14,7 @@
 int main(){
     int c,max,count;
     max = 0;
+    count = 0;
     while((c = getchar())!= EOF){
         if (c == '\n'){
             if(count > max){
